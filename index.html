@@ -60,8 +60,15 @@
 					<div class="container">
 						<article>The Coronavirus (COVID-19) was first reported in Wuhan, Hubei, China in December 2019, the outbreak was later recognized as a pandemic by the World Health Organization (WHO) on 11 March 2020.</article>
 					</div>
+					<div class="row">
+						<div class="col-md-6 col-sm-12 col-lg-6">
+							<a href="#about" class="btn" title="Learn more about COVID-19">Learn More <i class="fas fa-arrow-right"></i></a>
+						</div>
+						<div class="col-md-6 col-sm-12 col-lg-6">
+							<a href="https://www.trackcorona.live/map" target="_blank" class="btn alter-btn" title="Track Live Status on World Map">Tracking COVID-19<i class="fas fa-arrow-right"></i></a>
+						</div>
+					</div>
 					
-					<a href="#about" class="btn" title="Learn more about COVID-19">Learn More <i class="fas fa-arrow-right"></i></a>
 					<div class="container">
 						<br>
 						<p>Showing Statistics In <span id="loc" style="text-transform: capitalize; color: #f71a56;"> LOADING </span></h3>
@@ -104,11 +111,11 @@
 	<hr>
 	<!-- MAP SECTION -->
 	<!-- MAP COURTESY : TrackCorona(https://www.trackcorona.live) -->
-	<section id="LiveTrack">
+	<!-- <section id="LiveTrack">
 		<div class="container p-3 embed-responsive embed-responsive-16by9">
 			<iframe class="embed-responsive-item" style="border-radius: 5%" src="https://www.trackcorona.live/map"></iframe>
 		</div>
-	</section>
+	</section> -->
 	<!-- NEWS SECTION -->
 	<section>
 		<div class="container text-center">
@@ -119,7 +126,7 @@
 			</div>
 			<br>
 			<br>
-			<a href="news.html" title="More COVID-19 News Updates" class="btn" style="padding-top: 1%" title="Learn more about COVID-19">Want More <i class="fas fa-arrow-right"></i></a>
+			<a href="news.html" title="More COVID-19 News Updates" class="btn" title="Learn more about COVID-19">Want More <i class="fas fa-arrow-right"></i></a>
 		</div>
 	</section>
 	<hr>
@@ -545,7 +552,8 @@
 		console.log(countryCode);
 		var url = 'http://newsapi.org/v2/top-headlines?' +
 	          'country='+countryCode+'&' +
-	          'q=covid-19&' +
+			  'q=covid-19&' +
+			  'pageSize=6&' +
 	          'apiKey=8b24a3b6917a469cb37cbfffb1a10e1f';
 		fetch(url)
 		  .then(function(response) {
@@ -568,7 +576,7 @@
 	</script>
 	<!-- COVID-19 STATS SCRIPT -->
 	<script type="text/javascript">
-		var c = $.get("http://ip-api.com/json", function(response) {
+		$.get("http://ip-api.com/json", function(response) {
 			sessionStorage.setItem("loc", response.country);
 		}, "jsonp")
 		document.getElementById('loc').innerHTML = sessionStorage.getItem("loc");
