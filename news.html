@@ -10,9 +10,32 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
 	<link rel="shortcut icon" href="images/logo/icon.png" type="image/x-icon" />
-    <title>Latest COVID-19 News</title>
+	<title>Latest COVID-19 News</title>
+	<script>
+		var loader;
+		function loadNow(opacity){
+			if(opacity<=0){
+				displayContent();
+			}else{
+				loader.style.opacity = opacity;
+				window.setTimeout(function(){
+					loadNow(opacity - 0.05)
+				},100);
+			}
+		}
+		function displayContent(){
+			loader.style.display = 'none';
+			document.getElementById('content').style.display = 'block';
+		}
+		document.addEventListener("DOMContentLoaded", function(){
+			loader = document.getElementById('loader');
+			loadNow(1);
+		});
+		
+	</script>
   </head>
   <body>
+	<div id="loader"></div>
   	<!--NAVBAR-->
   	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 	  <a class="navbar-brand" href="index.html"><img src="images/logo/horilogo.png" width=150 alt="COVID INFOMATRICS"></a>

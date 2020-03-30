@@ -153,3 +153,11 @@ a:hover, a:focus, a:active { outline: 0; }
 .carousel-control-prev {
     filter: invert(100%);
 }
+
+#loader{
+  position:fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 999999;
+  background: rgba(0,0,0,0.9) url('loading.gif') no-repeat center center;
+}
