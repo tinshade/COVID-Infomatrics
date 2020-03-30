@@ -5,7 +5,9 @@
 	padding: 0px;
 }
 html, body {font-family: "Roboto", sans-serif; color: #50658e; font-size: 16px; line-height: 1.6; font-weight: 300; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; position: relative; }
-
+html {
+    scroll-behavior: smooth;
+  }
 body.noscroll { overflow: hidden; }
 body{
 	background-color: #fff0f4;

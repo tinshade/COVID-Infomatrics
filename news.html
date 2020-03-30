@@ -34,16 +34,12 @@
 	        <a class="nav-link" href="index.html#prevention" title="Prevention is the only cure">Prevention</a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" href="#maf" title="Some well known myths and facts about COVID-19">Myths And Facts</a>
+	        <a class="nav-link" href="index.html#myths" title="Some well known myths and facts about COVID-19">Myths And Facts</a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link disabled" href="#" title="Will be available shortly!">Donate</a>
+	        <a class="nav-link" href="https://t.co/enPvcqCTw2" target="_blank" title="Donate To PM Relief Fund!">Donate</a>
 	      </li>
 	    </ul>
-	    <form class="form-inline my-2 my-lg-0">
-	      <input class="inpdes mr-sm-2" type="search" placeholder="Enter Country Name" aria-label="Search">
-	      <button class="btn btn-outline-danger my-2 my-sm-0" title="View Country Statistics" type="submit"><i class="csn fas fa-search" style="color:#ff4d7d;"></i></button>
-	    </form>
 	  </div>
 	</nav>
 
@@ -92,9 +88,13 @@
 								  <li><a class="tw-ic" title="Share via Twitter" onclick="window.open('https://twitter.com/intent/tweet?text=#COVID-19','newwindow', 'width=600', 'height=300'); return false;">
 									  <i class="fab fa-twitter fa-lg text-white fa-2x"></i>
 								  </a></li>
-								  <!-- Google +-->
+								  <!-- WHO -->
 								  <li><a title="Visit WHO" href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019" class="gplus-ic">
 									<i class="fas fa-globe fa-lg text-white fa-2x"></i>
+								  </a></li>
+								  <!-- WHO -->
+								  <li style="padding-top:20px"><a title="Visit Indian COVID-19 Dashboard" href="https://www.covid19india.org/" class="gplus-ic">
+									<img src="images/favicon.ico" alt="icon">
 								  </a></li>
 								  <!-- Whatsapp -->
 								  <li><a class="li-ic" title="Share via Whatsapp" onclick="window.open('https://wa.me/?text=COVID-19 : Know More Here: ','newwindow', 'width=600', 'height=300'); return false;">
@@ -157,13 +157,8 @@
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type="text/javascript">
-		$.get("http://ip-api.com/json", function(response) {
-			sessionStorage.setItem("code", response.countryCode);
-		}, "jsonp")
-		var countryCode = sessionStorage.getItem("code");
-		console.log(countryCode);
 		var url = 'http://newsapi.org/v2/top-headlines?' +
-	          'country='+countryCode+'&' +
+	          'country=in&' +
 	          'q=covid-19&' +
 	          'apiKey=8b24a3b6917a469cb37cbfffb1a10e1f';
 		fetch(url)
