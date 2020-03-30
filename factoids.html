@@ -71,32 +71,13 @@
     <section id="factoids">
         <div class="container text-center">
             <div class="row" id="facts">
-
+                <div class="container-fluid" id="loading">
+					<img class="img-fluid" src="assets/loading.gif">
+				</div>
             </div>
         </div>
     </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <!-- FOOTER SECTION -->
     <footer class="nk-footer bg-dark tc-light has-overlay">
         <div class="overlay shape shape-c"></div><!-- Overlay Shape -->
         <section class="section section-footer section-m tc-light">
@@ -220,6 +201,8 @@
 		    return response.json();
 		  })
 		  .then(function(myJson) {
+            var loading = document.getElementById('loading');
+            loading.style.display="none";
 		    myJson.factoids.forEach(myprinter);
 		    function myprinter(item){
                 var facts = document.getElementById('facts');
@@ -228,8 +211,6 @@
                 }else{
                     facts.innerHTML += "<div class='col-md-4 col-sm-12 col-lg-4'><div class='container hvr-grow card p-2'><h5 class='card-header'>"+item.banner+"</h5><br></div></div>"
                 }
-		    	
-		    	
 		    }
 		  });
 	</script>

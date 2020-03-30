@@ -136,7 +136,9 @@
 			<h4>LATEST COVID-19 NEWS</h4>
 			<h1 class="hero-text">STAY UPDATED</h1>
 			<div class="row" id="news_posts">
-				
+				<div class="container-fluid" id="loading">
+					<img class="img-fluid" src="assets/loading.gif">
+				</div>
 			</div>
 			<br>
 			<br>
@@ -433,7 +435,9 @@
 			<h1 class="hero-text">COVID-19 FACTOIDS</h1>
 			<br>
             <div class="row" id="facts">
-
+				<div class="container-fluid" id="loadfact">
+					<img class="img-fluid" src="assets/loading.gif">
+				</div>
 			</div>
 			<a href="factoids.html" title="More COVID-19 Facts" target="_blank" class="btn">See More <i class="fas fa-arrow-right"></i></a>
         </div>
@@ -472,12 +476,12 @@
 	</section>
 	<hr>
 	<!-- INFOTAINMENT VIDEOS SECTION -->
-	<section id="videos" style="background: url('images/videobg.png') no-repeat center/cover;">
+	<section id="videos" style="background: url('images/videobg.svg') no-repeat center/cover;">
 		<div class="container text-center">
 			<div id="infotainment" class="carousel slide" data-ride="carousel">
 				<div class="container text-center">
 					<h4>WANT SOMETHING INFOTAINING?</h4>
-					<h1 class="hero-text" style="text-shadow: 2px 5px 14px black;">COVID-19 INFOTAINMENT VIDEOS</h1>
+					<h1 class="hero-text" style="text-shadow: 2px 5px 14px rgba(250, 7, 97,0.6); color:white">COVID-19 INFOTAINMENT VIDEOS</h1>
 				</div>
 			  <div class="carousel-inner">
 			    <div class="carousel-item active">
@@ -501,7 +505,9 @@
 			</div>
 		</div>
 	</section>
-	
+	<hr>
+	<br>
+	<br>
 	<footer class="nk-footer bg-dark tc-light has-overlay">
 		<div class="overlay shape shape-c"></div><!-- Overlay Shape -->
 		<section class="section section-footer section-m tc-light">
@@ -628,7 +634,9 @@
 			//myJson.factoids.forEach(myprinter);
 			myJson.factoids.slice(0,6).forEach(myprinter);
 		    function myprinter(item){
-                var facts = document.getElementById('facts');
+				var facts = document.getElementById('facts');
+				var loadfact = document.getElementById('loadfact');
+				loadfact.style.display = "none";
                 if(item.id%2 == 0){
                     facts.innerHTML += "<div class='col-md-4 col-sm-12 col-lg-4'><div class='container hvr-grow bg-danger card newcard p-2'><h5 class='card-header' style='color: white !important'>"+item.banner+"</h5></div></div>"
                 }else{
@@ -647,13 +655,15 @@
 		  .then(function(myJson) {
 		    myJson.articles.forEach(myprinter);
 		    function myprinter(item){
-		    	var news_posts = document.getElementById('news_posts');
+				var news_posts = document.getElementById('news_posts');
+				var loading = document.getElementById('loading');
 		    	var author;
 		    	if(item.author == null){
 		    		author = "Anonymous";
 		    	}else{
 		    		author = item.author;
-		    	}
+				}
+				loading.style.display="none";
 		    	news_posts.innerHTML += "<div class='col-md-4 col-sm-12 col-lg-4'><div class='container hvr-grow card p-2'><img class='img-fluid card-img-top' style='max-height:221px; min-height:221px;' src='"+item.urlToImage+"' alt="+item.title+"><h5 class='card-header'>"+item.title+"</h5><br><span>Author: "+author+"</span><br><small>Posted On: "+item.publishedAt+"</small><div class='card-body p-1'><article class='card-text'>"+item.description+"</article></div><div class='card-footer p-2'><small class='text-muted'>Source: "+item.source.name+"</small><br><small class='text-muted'><a href="+item.url+" title="+item.title+">Read More <i class='fas fa-arrow-right'></a></small></div></div></div>"
 		    }
 		  });
