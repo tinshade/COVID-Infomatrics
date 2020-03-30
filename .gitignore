@@ -8,3 +8,4 @@ font/
 examples/
 notes.txt
 COVIDWS.code-workspace
+*.log

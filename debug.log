@@ -1,0 +1,2 @@
+[0330/134523.529:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: An attempt was made to access an exiting process. (0xc000010a)
+[0330/134524.218:WARNING:minidump_to_upload_parameters.cc(36)] duplicate key guid, discarding value 1eaba67b-ee35-4d89-b4c9-d69fc73e6b9b

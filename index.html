@@ -10,9 +10,15 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
 	<link rel="shortcut icon" href="images/logo/icon.png" type="image/x-icon" />
 	<link rel="stylesheet" href="assets/hover-min.css">
-	
-	<!-- COVID-19 TOLL SCRIPT -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<style>
+        .newcard{
+            min-height: 170px;
+            max-height: 170px;
+            overflow: hidden;
+			margin: 5%;
+		}
+    </style>
     <title>COVID-19 Infomatrics</title>
   </head>
   <body>
@@ -37,7 +43,10 @@
 	        <a class="hvr-grow nav-link" href="#prevention" title="Prevention is the only cure">Prevention</a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="hvr-grow nav-link" href="#myths" title="Some well known myths and facts about COVID-19">Myths And Facts</a>
+	        <a class="hvr-grow nav-link" href="#myths" title="Some well known myths about COVID-19">Myths</a>
+		  </li>
+		  <li class="nav-item">
+	        <a class="hvr-grow nav-link" href="#factoids" title="Some factoids about COVID-19">Facts</a>
 	      </li>
 	      <li class="nav-item">
 	        <a class="hvr-grow nav-link" href="https://t.co/enPvcqCTw2" target="_blank" title="Donate To PM Relief Fund!">Donate</a>
@@ -391,7 +400,7 @@
 	<section id="myths">
 		<div class="container text-center">
 			<h4>SOME COMMON MISCONCEPTIONS</h4>
-			<h1 class="hero-text">MYTHS & FACTS</h1>
+			<h1 class="hero-text">MYTHS DEBUNKED</h1>
 			<div id="mythcontrol" class="carousel slide" data-ride="carousel">
 				<div class="carousel-inner">
 					<div class="carousel-item active">
@@ -416,6 +425,19 @@
 			</div>
 		</div>
 	</section>
+	<hr>
+	<!-- FACTOIDS SECTION -->
+    <section id="factoids">
+        <div class="container text-center">
+			<h4>STAY INFORMED</h4>
+			<h1 class="hero-text">COVID-19 FACTOIDS</h1>
+			<br>
+            <div class="row" id="facts">
+
+			</div>
+			<a href="factoids.html" title="More COVID-19 Facts" target="_blank" class="btn">See More <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
 	<hr>
 	<!-- BEST PRACTICES -->
 	<section>
@@ -450,7 +472,7 @@
 	</section>
 	<hr>
 	<!-- INFOTAINMENT VIDEOS SECTION -->
-	<section id="videos">
+	<section id="videos" style="background: url('images/videobg.png') no-repeat center/cover;">
 		<div class="container text-center">
 			<div id="infotainment" class="carousel slide" data-ride="carousel">
 				<div class="container text-center">
@@ -481,101 +503,143 @@
 	</section>
 	
 	<footer class="nk-footer bg-dark tc-light has-overlay">
-            <div class="overlay shape shape-c"></div><!-- Overlay Shape -->
-            <section class="section section-footer section-m tc-light">
-                <div class="container">
-                    <div class="nk-footer-top">
-                        <div class="row g-gs gy-m">
-                            <div class="col-lg-3 col-md-9 mr-auto">
-                                <div class="wgs wgs-about">
-                                    <div class="wgs-logo logo">
-                                        <a href="index.htm" class="logo-link">
-                                            <img width=150 src="images/logo/horilogo.png" srcset="images/logo/horilogo.png 2x" alt="logo">
-                                        </a>
-                                    </div>
-                                    <div class="wgs-about-text">
-                                        <p>This website is for health information and advice about coronavirus (COVID-19), how to prevent and protect yourself from disease.</p>
-                                        <p>Learn about the government response to coronavirus on GOV.UK.</p>
-                                    </div>
-                                    <ul class="wgs-social" type="none">
-                                        
-                                        <li><a class="fb-ic" title="Share via Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fpalforests.com&t=COVID-19 Infomatrics','newwindow', 'width=600', 'height=300'); return false;">
-							          	<i class="fab fa-facebook-f fa-lg text-white fa-2x"></i>
-							          </a></li>
-							          <!-- Twitter -->
-							          <li><a class="tw-ic" title="Share via Twitter" onclick="window.open('https://twitter.com/intent/tweet?text=#COVID-19','newwindow', 'width=600', 'height=300'); return false;">
-							          	<i class="fab fa-twitter fa-lg text-white fa-2x"></i>
-							          </a></li>
-							          <!-- WHO -->
-							          <li><a title="Visit WHO" href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019" class="gplus-ic">
-							            <i class="fas fa-globe fa-lg text-white fa-2x"></i>
-									  </a></li>
-									  <!-- WHO -->
-							          <li style="padding-top:20px"><a title="Visit Indian COVID-19 Dashboard" href="https://www.covid19india.org/" class="gplus-ic">
-							            <img src="images/favicon.ico" alt="icon">
-							          </a></li>
-							          <!-- Whatsapp -->
-							          <li><a class="li-ic" title="Share via Whatsapp" onclick="window.open('https://wa.me/?text=COVID-19 : Know More Here: ','newwindow', 'width=600', 'height=300'); return false;">
-							          	<i class="fab fa-whatsapp fa-lg text-white fa-2x"></i>
-							          </a></li>
-                                    </ul>
-                                </div><!-- .wgs -->
-                            </div><!-- .col -->
-                            <div class="col-sm-4 col-lg-2">
-                                <div class="wgs wgs-menu">
-                                    <h6 class="wgs-title">Quick Link</h6>
-                                    <ul class="wgs-links">
-                                        <li><a href="https://www.who.int/health-topics/coronavirus#tab=tab_3">Symptoms</a></li>
-                                        <li><a href="https://www.who.int/health-topics/coronavirus#tab=tab_2">Prevention</a></li>
-                                        <li><a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public">Protect Youself</a></li>
-                                        <li><a href="https://www.who.int/csr/disease/coronavirus_infections/faq_dec12/en/">FAQs</a></li>
-                                        <li><a href="https://www.who.int/health-topics/coronavirus#tab=tab_1">About Corona</a></li>
-                                    </ul>
-                                </div><!-- .wgs -->
-                            </div><!-- .col -->
-                            <div class="col-sm-4 col-lg-3">
-                                <div class="wgs wgs-menu">
-                                    <h6 class="wgs-title">Helpful links</h6>
-                                    <ul class="wgs-links">
-                                        <li><a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/training/online-training">Online Training For COVID-19</a></li>
-                                        <li><a href="https://www.who.int/news-room/q-a-detail/q-a-coronaviruses">Q'n'A</a></li>
-                                        <li><a href="https://www.bing.com/covid">COVID Tracker</a></li>
-                                    </ul>
-                                </div><!-- .wgs -->
-                            </div><!-- .col -->
-                            <div class="col-sm-4 col-lg-2">
-                                <div class="wgs wgs-menu">
-                                    <h6 class="wgs-title">Important Link</h6>
-                                    <ul class="wgs-links">
-                                    	<li><a href="https://www.mygov.in/covid-19">IN GOV Website</a></li>
-                                        <li><a href="https://www.who.int/health-topics/coronavirus">WHO Website</a></li>
-                                        <li><a href="https://www.cdc.gov/coronavirus/2019-ncov/index.html">CDC Website</a></li>
-                                        <li><a href="https://www.nhs.uk/conditions/coronavirus-covid-19/">NHS Website</a></li>
-                                        <li><a href="https://www.health.harvard.edu/diseases-and-conditions/coronavirus-resource-center">Harvard Health</a></li>
-                                    </ul>
-                                </div><!-- .wgs -->
-                            </div><!-- .col -->
-                        </div><!-- .row -->
-                    </div><!-- .nk-footer-top -->
-                    <br>
-                    <div class="nk-footer-bottom text-center">
-                    	<p class="nk-copyright">Made by<br><a class="text-white" href="https://www.linkedin.com/in/abhishek-i-4ba8968a">Abhishek Iyengar</a>.</p>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="nk-dislaimer">
-                                    <p>Disclaimer: We hope you find the information presented on this website useful. This website is for general information and raise awareness of (2019-nCoV) only. <br class="d-none d-lg-block">
-                                        All the information based on WHO, NHS and CDC website.  Information on our website is meant for awareness, if you have any doubt please verify from respective site.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- .nk-footer-bottom -->
-                </div><!-- .container -->
-            </section><!-- .section -->
-        </footer><!-- .nk-footer -->
+		<div class="overlay shape shape-c"></div><!-- Overlay Shape -->
+		<section class="section section-footer section-m tc-light">
+			<div class="container">
+				<div class="nk-footer-top">
+					<div class="row g-gs gy-m">
+						<div class="col-lg-3 col-md-9 mr-auto">
+							<div class="wgs wgs-about">
+								<div class="wgs-logo logo">
+									<a href="index.htm" class="logo-link">
+										<img width=150 src="images/logo/horilogo.png" srcset="images/logo/horilogo.png 2x"
+											alt="logo">
+									</a>
+								</div>
+								<div class="wgs-about-text">
+									<p>This website is for health information and advice about coronavirus (COVID-19), how
+										to prevent and protect yourself from disease.</p>
+									<p>Learn about the government response to coronavirus on GOV.UK.</p>
+								</div>
+								<ul class="wgs-social" type="none">
+	
+									<li><a class="fb-ic" title="Share via Facebook"
+											onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fpalforests.com&t=COVID-19 Infomatrics','newwindow', 'width=600', 'height=300'); return false;">
+											<i class="fab fa-facebook-f fa-lg text-white fa-2x"></i>
+										</a></li>
+									<!-- Twitter -->
+									<li><a class="tw-ic" title="Share via Twitter"
+											onclick="window.open('https://twitter.com/intent/tweet?text=#COVID-19','newwindow', 'width=600', 'height=300'); return false;">
+											<i class="fab fa-twitter fa-lg text-white fa-2x"></i>
+										</a></li>
+									<!-- WHO -->
+									<li><a title="Visit WHO"
+											href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019"
+											class="gplus-ic">
+											<i class="fas fa-globe fa-lg text-white fa-2x"></i>
+										</a></li>
+									<!-- WHO -->
+									<li style="padding-top:20px"><a title="Visit Indian COVID-19 Dashboard"
+											href="https://www.covid19india.org/" class="gplus-ic">
+											<img src="images/favicon.ico" alt="icon">
+										</a></li>
+									<!-- Whatsapp -->
+									<li><a class="li-ic" title="Share via Whatsapp"
+											onclick="window.open('https://wa.me/?text=COVID-19 : Know More Here: ','newwindow', 'width=600', 'height=300'); return false;">
+											<i class="fab fa-whatsapp fa-lg text-white fa-2x"></i>
+										</a></li>
+								</ul>
+							</div><!-- .wgs -->
+						</div><!-- .col -->
+						<div class="col-sm-4 col-lg-2">
+							<div class="wgs wgs-menu">
+								<h6 class="wgs-title">Quick Link</h6>
+								<ul class="wgs-links">
+									<li><a href="https://www.who.int/health-topics/coronavirus#tab=tab_3">Symptoms</a></li>
+									<li><a href="https://www.who.int/health-topics/coronavirus#tab=tab_2">Prevention</a>
+									</li>
+									<li><a
+											href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public">Protect
+											Youself</a></li>
+									<li><a
+											href="https://www.who.int/csr/disease/coronavirus_infections/faq_dec12/en/">FAQs</a>
+									</li>
+									<li><a href="https://www.who.int/health-topics/coronavirus#tab=tab_1">About Corona</a>
+									</li>
+								</ul>
+							</div><!-- .wgs -->
+						</div><!-- .col -->
+						<div class="col-sm-4 col-lg-3">
+							<div class="wgs wgs-menu">
+								<h6 class="wgs-title">Helpful links</h6>
+								<ul class="wgs-links">
+									<li><a
+											href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/training/online-training">Online
+											Training For COVID-19</a></li>
+									<li><a href="https://www.who.int/news-room/q-a-detail/q-a-coronaviruses">Q'n'A</a></li>
+									<li><a href="https://www.bing.com/covid">COVID Tracker</a></li>
+								</ul>
+							</div><!-- .wgs -->
+						</div><!-- .col -->
+						<div class="col-sm-4 col-lg-2">
+							<div class="wgs wgs-menu">
+								<h6 class="wgs-title">Important Link</h6>
+								<ul class="wgs-links">
+									<li><a href="https://www.mygov.in/covid-19">IN GOV Website</a></li>
+									<li><a href="https://www.who.int/health-topics/coronavirus">WHO Website</a></li>
+									<li><a href="https://www.cdc.gov/coronavirus/2019-ncov/index.html">CDC Website</a></li>
+									<li><a href="https://www.nhs.uk/conditions/coronavirus-covid-19/">NHS Website</a></li>
+									<li><a
+											href="https://www.health.harvard.edu/diseases-and-conditions/coronavirus-resource-center">Harvard
+											Health</a></li>
+								</ul>
+							</div><!-- .wgs -->
+						</div><!-- .col -->
+					</div><!-- .row -->
+				</div><!-- .nk-footer-top -->
+				<br>
+				<div class="nk-footer-bottom text-center">
+					<p class="nk-copyright">Made by<br><a class="text-white"
+							href="https://www.linkedin.com/in/abhishek-i-4ba8968a">Abhishek Iyengar</a>.</p>
+					<div class="row">
+						<div class="col-12">
+							<div class="nk-dislaimer">
+								<p>Disclaimer: We hope you find the information presented on this website useful. This
+									website is for general information and raise awareness of (2019-nCoV) only. <br
+										class="d-none d-lg-block">
+									All the information based on WHO, NHS and CDC website. Information on our website is
+									meant for awareness, if you have any doubt please verify from respective site.</p>
+							</div>
+						</div>
+					</div>
+				</div><!-- .nk-footer-bottom -->
+			</div><!-- .container -->
+		</section><!-- .section -->
+	</footer>.nk-footer
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- FACTOIDS API SCRIPT -->
+	<script type="text/javascript">
+		var url = 'https://api.covid19india.org/website_data.json';
+		fetch(url)
+		  .then(function(response) {
+		    return response.json();
+		  })
+		  .then(function(myJson) {
+			//myJson.factoids.forEach(myprinter);
+			myJson.factoids.slice(0,6).forEach(myprinter);
+		    function myprinter(item){
+                var facts = document.getElementById('facts');
+                if(item.id%2 == 0){
+                    facts.innerHTML += "<div class='col-md-4 col-sm-12 col-lg-4'><div class='container hvr-grow bg-danger card newcard p-2'><h5 class='card-header' style='color: white !important'>"+item.banner+"</h5></div></div>"
+                }else{
+                    facts.innerHTML += "<div class='col-md-4 col-sm-12 col-lg-4'><div class='container hvr-grow card newcard p-2'><h5 class='card-header'>"+item.banner+"</h5><br></div></div>"
+                }
+		    }
+		  });
+	</script>
 	<!-- NEWS API SCRIPT -->
 	<script type="text/javascript">
-		var url = 'https://newsapi.org/v2/top-headlines?country=in&q=covid-19&pageSize=7&apiKey=8b24a3b6917a469cb37cbfffb1a10e1f';
+		var url = 'https://newsapi.org/v2/top-headlines?country=in&q=covid-19&pageSize=6&apiKey=8b24a3b6917a469cb37cbfffb1a10e1f';
 		fetch(url)
 		  .then(function(response) {
 		    return response.json();
