@@ -157,8 +157,8 @@
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type="text/javascript">
-		$.get("https://ip-api.com/json", function(response) {
-			sessionStorage.setItem("code", response.countryCode);
+		$.get("https://ipapi.co/8.8.8.8/json/", function(response) {
+			sessionStorage.setItem("code", response.country_code);
 		}, "jsonp")
 		var countryCode = sessionStorage.getItem("code");
 		console.log(countryCode);
