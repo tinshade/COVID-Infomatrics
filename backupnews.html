@@ -158,12 +158,11 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type="text/javascript">
 		$.get("https://ipapi.co/json", function(response) {
-			console.log(response);
 			sessionStorage.setItem("code", response.countryCode);
 		}, "jsonp")
 		var countryCode = sessionStorage.getItem("code");
 		console.log(countryCode);
-		var url = 'http://newsapi.org/v2/top-headlines?' +
+		var url = 'https://newsapi.org/v2/top-headlines?' +
 	          'country='+countryCode+'&' +
 	          'q=covid-19&' +
 	          'apiKey=8b24a3b6917a469cb37cbfffb1a10e1f';
