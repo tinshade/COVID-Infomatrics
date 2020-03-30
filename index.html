@@ -66,13 +66,13 @@
 							<a href="#about" class="btn" title="Learn more about COVID-19">Learn More <i class="fas fa-arrow-right"></i></a>
 						</div>
 						<div class="col-md-6 col-sm-12 col-lg-6">
-							<a href="https://www.trackcorona.live/map" target="_blank" class="btn alter-btn" title="Track Live Status on World Map">Tracking COVID-19<i class="fas fa-arrow-right"></i></a>
+							<a href="https://www.covid19india.org/" target="_blank" class="btn alter-btn" title="Track Live Status In India">Tracking COVID-19<i class="fas fa-arrow-right"></i></a>
 						</div>
 					</div>
 					
 					<div class="container">
 						<br>
-						<p>Showing Statistics In <span id="loc" style="text-transform: capitalize; color: #f71a56;"> LOADING </span></h3>
+						<p>Showing Statistics In <span id="loc" style="text-transform: capitalize; color: #f71a56;"> INDIA </span></h3>
 						<br>
 						<div class="row">
 							<div class="col-lg-4 col-sm-12 col-md-4 pd-2 pt-2">
@@ -113,6 +113,10 @@
 	<!-- MAP SECTION -->
 	<!-- MAP COURTESY : TrackCorona(https://www.trackcorona.live) -->
 	<section id="LiveTrack">
+		<div class="container text-center">
+			<h4>REGIONS AFFECTED ACROSS THE GLOBE</h4>
+			<h1 class="hero-text">VISUALIZE THE SPREAD</h1>
+		</div>
 		<div class="container p-3 embed-responsive embed-responsive-16by9">
 			<iframe class="embed-responsive-item" style="border-radius: 5%" src="https://www.trackcorona.live/map"></iframe>
 		</div>
@@ -570,34 +574,8 @@
         </footer><!-- .nk-footer -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<!-- NEWS API SCRIPT -->
-	<!-- <script type="text/javascript">
-		var c = $.get("http://ip-api.com/json", function(response) {
-			sessionStorage.setItem("code", response.countryCode);
-		}, "jsonp")
-		var countryCode = sessionStorage.getItem("code");
-		var url = 'https://newsapi.org/v2/top-headlines?country='+countryCode+'&q=covid-19&pageSize=6apiKey=8b24a3b6917a469cb37cbfffb1a10e1f';
-		console.log(url);	
-		console.log(countryCode);
-		fetch(url)
-		  .then(function(response) {
-		    return response.json();
-		  })
-		  .then(function(myJson) {
-		    myJson.articles.forEach(myprinter);
-		    function myprinter(item){
-		    	var news_posts = document.getElementById('news_posts');
-		    	var author;
-		    	if(item.author == null){
-		    		author = "Anonymous";
-		    	}else{
-		    		author = item.author;
-		    	}
-		    	news_posts.innerHTML += "<div class='col-md-4 col-sm-12 col-lg-4'><div class='container hvr-grow card p-2'><img class='img-fluid card-img-top' style='max-height:221px; min-height:221px;' src='"+item.urlToImage+"' alt="+item.title+"><h5 class='card-header'>"+item.title+"</h5><br><span>Author: "+author+"</span><br><small>Posted On: "+item.publishedAt+"</small><div class='card-body p-1'><article class='card-text'>"+item.description+"</article></div><div class='card-footer p-2'><small class='text-muted'>Source: "+item.source.name+"</small><br><small class='text-muted'><a href="+item.url+" title="+item.title+">Read More <i class='fas fa-arrow-right'></a></small></div></div></div>"
-		    }
-		  });
-	</script> -->
 	<script type="text/javascript">
-		var url = 'https://newsapi.org/v2/top-headlines?country=in&q=covid-19&pageSize=6apiKey=8b24a3b6917a469cb37cbfffb1a10e1f';
+		var url = 'https://newsapi.org/v2/top-headlines?country=in&q=covid-19&pageSize=6&apiKey=8b24a3b6917a469cb37cbfffb1a10e1f';
 		fetch(url)
 		  .then(function(response) {
 		    return response.json();
@@ -617,30 +595,6 @@
 		  });
 	</script>
 	<!-- COVID-19 STATS SCRIPT -->
-	<!-- <script type="text/javascript">
-		$.get("http://ip-api.com/json", function(response) {
-			sessionStorage.setItem("loc", response.country);
-		}, "jsonp")
-		document.getElementById('loc').innerHTML = sessionStorage.getItem("loc");
-		var url = `https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats?country=${sessionStorage.getItem("loc")}`
-		var settings = {
-			"async": true,
-			"crossDomain": true,
-			"url": `${url}`,
-			"method": "GET",
-			"headers": {
-				"x-rapidapi-host": "covid-19-coronavirus-statistics.p.rapidapi.com",
-				"x-rapidapi-key": "b827ab8680mshbd7949fbb60d632p1ff3cfjsn6f4462105676"
-			}
-		}
-
-		$.ajax(settings).done(function (response) {
-			document.getElementById('confirmed').innerHTML = response.data.covid19Stats[0].confirmed;
-			document.getElementById('deaths').innerHTML = response.data.covid19Stats[0].deaths;
-			document.getElementById('recovered').innerHTML = response.data.covid19Stats[0].recovered;
-			document.getElementById('lastUpdate').innerHTML = response.data.covid19Stats[0].lastUpdate;
-		});
-	</script> -->
 	<script type="text/javascript">
 		var url = 'https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats?country=India'
 		var settings = {
