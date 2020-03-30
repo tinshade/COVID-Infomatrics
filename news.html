@@ -4,7 +4,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="assets/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/hover-min.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
@@ -22,22 +23,22 @@
 	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	    <ul class="navbar-nav ml-auto mr-5 mt-1 ml-5 mb-2">
 	      <li class="nav-item active">
-	        <a class="nav-link" href="index.html#home" title="Spread Awareness!">Home <span class="sr-only">(current)</span></a>
+	        <a class="nav-link hvr-grow" href="index.html#home" title="Spread Awareness!">Home <span class="sr-only">(current)</span></a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" href="index.html#about" title="What is Novel COVID-19?">About Corona</a>
+	        <a class="nav-link hvr-grow" href="index.html#about" title="What is Novel COVID-19?">About Corona</a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" href="index.html#symptoms" title="Feeling down? Analyze yourself!">Symptoms</a>
+	        <a class="nav-link hvr-grow" href="index.html#symptoms" title="Feeling down? Analyze yourself!">Symptoms</a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" href="index.html#prevention" title="Prevention is the only cure">Prevention</a>
+	        <a class="nav-link hvr-grow" href="index.html#prevention" title="Prevention is the only cure">Prevention</a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" href="index.html#myths" title="Some well known myths and facts about COVID-19">Myths And Facts</a>
+	        <a class="nav-link hvr-grow" href="index.html#myths" title="Some well known myths and facts about COVID-19">Myths And Facts</a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" href="https://t.co/enPvcqCTw2" target="_blank" title="Donate To PM Relief Fund!">Donate</a>
+	        <a class="nav-link hvr-grow" href="https://t.co/enPvcqCTw2" target="_blank" title="Donate To PM Relief Fund!">Donate</a>
 	      </li>
 	    </ul>
 	  </div>
@@ -157,8 +158,12 @@
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type="text/javascript">
+		$.get("http://ip-api.com/json", function(response) {
+			sessionStorage.setItem("code", response.countryCode);
+		}, "jsonp")
+		var countryCode = sessionStorage.getItem("code");
 		var url = 'https://newsapi.org/v2/top-headlines?' +
-	          'country=in&' +
+	          'country='+countryCode+'&' +
 	          'q=covid-19&' +
 	          'apiKey=8b24a3b6917a469cb37cbfffb1a10e1f';
 		fetch(url)
@@ -166,7 +171,6 @@
 		    return response.json();
 		  })
 		  .then(function(myJson) {
-		    console.log(myJson);
 		    myJson.articles.forEach(myprinter);
 		    function myprinter(item){
 		    	var news_posts = document.getElementById('news_posts');
@@ -176,16 +180,18 @@
 		    	}else{
 		    		author = item.author;
 		    	}
-		    	news_posts.innerHTML += "<div class='col-md-4 col-sm-12 col-lg-4'><div class='container card p-2'><img class='img-fluid card-img-top' style='max-height:221px; min-height:221px;' src='"+item.urlToImage+"' alt="+item.title+"><h5 class='card-header'>"+item.title+"</h5><br><span>Author: "+author+"</span><br><small>Posted On: "+item.publishedAt+"</small><div class='card-body p-1'><article class='card-text'>"+item.description+"</article></div><div class='card-footer p-2'><small class='text-muted'>Source: "+item.source.name+"</small><br><small class='text-muted'><a href="+item.url+" title="+item.title+">Read More <i class='fas fa-arrow-right'></a></small></div></div></div>"
+		    	news_posts.innerHTML += "<div class='col-md-4 col-sm-12 col-lg-4'><div class='container hvr-grow card p-2'><img class='img-fluid card-img-top' style='max-height:221px; min-height:221px;' src='"+item.urlToImage+"' alt="+item.title+"><h5 class='card-header'>"+item.title+"</h5><br><span>Author: "+author+"</span><br><small>Posted On: "+item.publishedAt+"</small><div class='card-body p-1'><article class='card-text'>"+item.description+"</article></div><div class='card-footer p-2'><small class='text-muted'>Source: "+item.source.name+"</small><br><small class='text-muted'><a href="+item.url+" title="+item.title+">Read More <i class='fas fa-arrow-right'></a></small></div></div></div>"
 		    }
 		  });
 	</script>
+
 
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<script src="assets/zenscroll-min.js"></script>
   </body>
 </html>
