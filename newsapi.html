@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<style type="text/css">
+		.card-header{
+			background-color: transparent !important;
+			border-bottom: solid 1px 25%;
+			color: #ff2161;
+
+		}
+		.card{
+			box-shadow: 2px 5px 17px rgba(252, 144, 175,0.7);
+			max-height: 650px; 
+			min-height: 650px;
+			overflow: hidden;
+			margin-bottom: 5%;
+		}
+		.card-footer{
+			background-color: transparent !important;
+		}
+	</style>
+	
+	<title>News API</title>
+</head>
+<body>
+	<section id="news">
+		<div class="container">
+			<div class="row" id="news_posts">
+				
+			</div>
+		</div>
+	</section>
+	
+<!-- NEWS API SCRIPT -->
+	<script type="text/javascript">
+		var url = 'http://newsapi.org/v2/top-headlines?' +
+	          'country=in&' +
+	          'q=covid-19&' +
+	          'pageSize=6&' +
+	          'apiKey=8b24a3b6917a469cb37cbfffb1a10e1f';
+		fetch(url)
+		  .then(function(response) {
+		    return response.json();
+		  })
+		  .then(function(myJson) {
+		    console.log(myJson);
+		    myJson.articles.forEach(myprinter);
+		    function myprinter(item){
+		    	var news_posts = document.getElementById('news_posts');
+		    	var author;
+		    	if(item.author == null){
+		    		author = "Anonymous";
+		    	}else{
+		    		author = item.author;
+		    	}
+		    	news_posts.innerHTML += "<div class='col-md-4 col-sm-12 col-lg-4'><div class='container card p-2'><img class='img-fluid card-img-top' style='max-height:221px; min-height:221px;' src='"+item.urlToImage+"' alt="+item.title+"><h5 class='card-header'>"+item.title+"</h5><br><span>Author: "+author+"</span><br><small>Posted On: "+item.publishedAt+"</small><div class='card-body p-1'><article class='card-text'>"+item.description+"</article></div><div class='card-footer p-2'><small class='text-muted'>Source: "+item.source.name+"</small><br><small class='text-muted'><a href="+item.url+" title="+item.title+">Read More</a></small></div></div></div>"
+		    }
+		  });
+	</script>
+ <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
