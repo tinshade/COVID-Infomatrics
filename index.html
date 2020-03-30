@@ -570,17 +570,14 @@
         </footer><!-- .nk-footer -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<!-- NEWS API SCRIPT -->
-	<!-- NEWS API SCRIPT -->
 	<script type="text/javascript">
 		$.get("http://ip-api.com/json", function(response) {
 			sessionStorage.setItem("code", response.countryCode);
 		}, "jsonp")
 		var countryCode = sessionStorage.getItem("code");
-		var url = 'https://newsapi.org/v2/top-headlines?' +
-	          'country='+countryCode+'&' +
-			  'q=covid-19&' +
-			  'pageSize=6&' +
-	          'apiKey=8b24a3b6917a469cb37cbfffb1a10e1f';
+		var url = 'https://newsapi.org/v2/top-headlines?country='+countryCode+'&q=covid-19&pageSize=6apiKey=8b24a3b6917a469cb37cbfffb1a10e1f';
+		console.log(url);
+		console.log(countryCode);
 		fetch(url)
 		  .then(function(response) {
 		    return response.json();
@@ -610,26 +607,6 @@
 			"async": true,
 			"crossDomain": true,
 			"url": `${url}`,
-			"method": "GET",
-			"headers": {
-				"x-rapidapi-host": "covid-19-coronavirus-statistics.p.rapidapi.com",
-				"x-rapidapi-key": "b827ab8680mshbd7949fbb60d632p1ff3cfjsn6f4462105676"
-			}
-		}
-
-		$.ajax(settings).done(function (response) {
-			document.getElementById('confirmed').innerHTML = response.data.covid19Stats[0].confirmed;
-			document.getElementById('deaths').innerHTML = response.data.covid19Stats[0].deaths;
-			document.getElementById('recovered').innerHTML = response.data.covid19Stats[0].recovered;
-			document.getElementById('lastUpdate').innerHTML = response.data.covid19Stats[0].lastUpdate;
-		});
-	</script>
-	<!-- COVID-19 STATS SCRIPT -->
-	<script type="text/javascript">
-		var settings = {
-			"async": true,
-			"crossDomain": true,
-			"url": "https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats?country=India",
 			"method": "GET",
 			"headers": {
 				"x-rapidapi-host": "covid-19-coronavirus-statistics.p.rapidapi.com",
