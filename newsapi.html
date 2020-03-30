@@ -41,7 +41,11 @@
 	
 <!-- NEWS API SCRIPT -->
 	<script type="text/javascript">
-		var url = 'https://newsapi.org/v2/everything?q=bitcoin&from=2020-02-29&sortBy=publishedAt&apiKey=8b24a3b6917a469cb37cbfffb1a10e1f';
+		var url = 'http://newsapi.org/v2/top-headlines?' +
+	          'country=in&' +
+	          'q=covid-19&' +
+	          'pageSize=6&' +
+	          'apiKey=8b24a3b6917a469cb37cbfffb1a10e1f';
 		fetch(url)
 		  .then(function(response) {
 		    return response.json();
