@@ -158,6 +158,8 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type="text/javascript">
 		$.get("https://ipapi.co/8.8.8.8/json/", function(response) {
+			console.log(response);
+			console.log(response.country_code);
 			sessionStorage.setItem("code", response.country_code);
 		}, "jsonp")
 		var countryCode = sessionStorage.getItem("code");
