@@ -158,12 +158,8 @@
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type="text/javascript">
-		$.get("http://ip-api.com/json", function(response) {
-			sessionStorage.setItem("code", response.countryCode);
-		}, "jsonp")
-		var countryCode = sessionStorage.getItem("code");
 		var url = 'https://newsapi.org/v2/top-headlines?' +
-	          'country='+countryCode+'&' +
+	          'country=in&' +
 	          'q=covid-19&' +
 	          'apiKey=8b24a3b6917a469cb37cbfffb1a10e1f';
 		fetch(url)
