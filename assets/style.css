@@ -73,7 +73,22 @@ body{
     color: #fff;
     transform: translateY(-7px);
 }
+.donate-btn {
+    color: #238c1d;
+    background-color: transparent;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+}
 
+.donate-btn:hover {
+    background-color: #238c1d;
+    box-shadow: 0px 5px 10px rgba(68, 174, 255, 0.6); 
+    color: #fff;
+    transform: translateY(-7px);
+}
 .hero-text{
 	font-weight: 900;
 	font-size: 2.7rem;

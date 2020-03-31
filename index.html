@@ -43,9 +43,9 @@
 		
 	</script>
   </head>
-  <body>
+  <body onload="calldonate()">
 	<div id="loader"></div>
-  	<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+  	<nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
 	  <a class="navbar-brand" href="index.html"><img src="images/logo/horilogo.png" width=150 alt="COVID INFOMATRICS"></a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
@@ -532,10 +532,66 @@
 	<hr>
 	<br>
 	<br>
+	<!-- DONATION MODAL SECTION -->
+	<!-- Button trigger modal -->
+	<button type="button" style="display: none" id="donatebtn" class="btn btn-primary" data-toggle="modal" data-target="#Donate"></button>
+
+    <!--Modal: Donate-->
+    <div class="modal fade right text-center" id="Donate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+      aria-hidden="true" data-backdrop="true">
+      <div class="modal-dialog modal-side modal-bottom-right modal-notify modal-danger" role="document">
+        <!--Content-->
+        <div class="modal-content">
+          <!--Header-->
+          <div class="modal-header">
+            <h1 class="hero-text heading">Donate To A 'NOVEL' Cause</h1>
+
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true" class="white-text">&times;</span>
+            </button>
+          </div>
+
+          <!--Body-->
+          <div class="modal-body">
+
+            <div class="row">
+              <div class="col-md-3 col-lg-3 col-sm-12">
+                <p></p>
+                <p class="text-center">
+                  <i style="color: #008013" class="hvr-pulse fas fa-rupee-sign fa-4x"></i>
+                </p>
+              </div>
+
+              <div class="col-md-9 col-lg-9 col-sm-12">
+                <p>Sharing is caring. Therefore, at this time of need, we would like all the help we can get from the well-wishers of this nation.</p>
+                <p>
+                  <strong>Please DONATE and help the cause
+                    <u style="color: #f71a56">#IndiaFightsCorona</u>.</strong>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!--Footer-->
+          <div class="modal-footer flex-center">
+            <a href="https://t.co/enPvcqCTw2" target="_blank" title="Donate To A 'NOVEL' Cause!" class="btn donate-btn">DONATE NOW
+              <i class="fas fa-rupee-sign"></i>
+            </a>
+            <button class="btn alter-btn" data-dismiss="modal">No, Thanks</button>
+          </div>
+        </div>
+        <!--/.Content-->
+      </div>
+    </div>
+    <!--Modal: modalDonate-->
+	<script type="text/javascript">
+		function calldonate(){
+			document.getElementById('donatebtn').click();
+		}
+	</script>
 	<footer class="nk-footer bg-dark tc-light has-overlay">
-		<div class="overlay shape shape-c"></div><!-- Overlay Shape -->
 		<section class="section section-footer section-m tc-light">
-			<div class="container">
+			<div class="container-fluid pt-5">
 				<div class="nk-footer-top">
 					<div class="row g-gs gy-m">
 						<div class="col-lg-3 col-md-9 mr-auto">
@@ -554,12 +610,12 @@
 								<ul class="wgs-social" type="none">
 	
 									<li><a class="fb-ic" title="Share via Facebook"
-											onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fpalforests.com&t=COVID-19 Infomatrics','newwindow', 'width=600', 'height=300'); return false;">
+											onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcovidinfomatrics.netlify.com&t=COVID-19 Infomatrics','newwindow', 'width=600', 'height=300'); return false;">
 											<i class="fab fa-facebook-f fa-lg text-white fa-2x"></i>
 										</a></li>
 									<!-- Twitter -->
 									<li><a class="tw-ic" title="Share via Twitter"
-											onclick="window.open('https://twitter.com/intent/tweet?text=#COVID-19','newwindow', 'width=600', 'height=300'); return false;">
+											onclick="window.open('https://twitter.com/intent/tweet?text=#COVID','newwindow', 'width=600', 'height=300'); return false;">
 											<i class="fab fa-twitter fa-lg text-white fa-2x"></i>
 										</a></li>
 									<!-- WHO -->
@@ -575,7 +631,7 @@
 										</a></li>
 									<!-- Whatsapp -->
 									<li><a class="li-ic" title="Share via Whatsapp"
-											onclick="window.open('https://wa.me/?text=COVID-19 : Know More Here: ','newwindow', 'width=600', 'height=300'); return false;">
+											onclick="window.open('https://wa.me/?text=COVID-19 : Know More Here: https://covidinfomatrics.netlify.com','newwindow', 'width=600', 'height=300'); return false;">
 											<i class="fab fa-whatsapp fa-lg text-white fa-2x"></i>
 										</a></li>
 								</ul>
@@ -645,7 +701,8 @@
 				</div><!-- .nk-footer-bottom -->
 			</div><!-- .container -->
 		</section><!-- .section -->
-	</footer>.nk-footer
+	</footer>
+	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<!-- FACTOIDS API SCRIPT -->
 	<script type="text/javascript">
