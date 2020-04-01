@@ -48,12 +48,14 @@ body{
     transition: all 0.3s ease 0s;
     cursor: pointer;
     outline: none;
+    margin-top: 2%;
 }
 
 .btn:hover {
     background-color: #f71a56;
     box-shadow: 0px 5px 10px rgba(68, 174, 255, 0.6); 
     color: #fff;
+    margin-top: 2%;
     transform: translateY(-7px);
 }
 
@@ -65,6 +67,7 @@ body{
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease 0s;
     cursor: pointer;
+    margin-top: 2%;
 }
 
 .alter-btn:hover {
@@ -72,6 +75,7 @@ body{
     box-shadow: 0px 5px 10px rgba(68, 174, 255, 0.6); 
     color: #fff;
     transform: translateY(-7px);
+    margin-top: 2%;
 }
 .donate-btn {
     color: #238c1d;
@@ -81,6 +85,7 @@ body{
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease 0s;
     cursor: pointer;
+    margin-top: 2%;
 }
 
 .donate-btn:hover {
@@ -88,6 +93,7 @@ body{
     box-shadow: 0px 5px 10px rgba(68, 174, 255, 0.6); 
     color: #fff;
     transform: translateY(-7px);
+    margin-top: 2%;
 }
 .hero-text{
 	font-weight: 900;
@@ -152,7 +158,8 @@ a:hover, a:focus, a:active { outline: 0; }
   .wgs-list li a { padding: 1.125rem 1.875rem; } }
 @media (min-width: 992px) and (max-width: 1199px) { .wgs-head { padding: 1.25rem 1.5rem; }
   .wgs-list li a { padding: 1.125rem 1.5rem; } }
-
+@media (min-width: 767px) { .wgs-head { padding: 1.25rem 1.5rem; }
+  .wgs-list li a { padding: 1.125rem 1.5rem; } }
 
 
  strong{
