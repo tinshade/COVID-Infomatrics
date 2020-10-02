@@ -9,12 +9,13 @@ period. Yes, there is no quarantine break when you are a developer.
 
 You can check the website [HERE](http://covidinfomatrics.netlify.com)
 
-##Future Plans
+## Future Plans
 1. Shift to React/Django 
 2. Tweet Search based on location and Hashtag
 3. NodeJS/Python Map plotting and visualization for local map display on the website
 
-![HomePage of COVID-19 Infomatrics](https://github.com/tinshade/COVID-Infomatrics/tree/master/images/HomePage.jpg)
+- Home of COVID_19 Informatics:
+![Home of COVID_19 Informatics](https://github.com/tinshade/COVID-Infomatrics/blob/master/images/HomePage.jpg)
 
-###I Would Like All The Help I Could Get!
-####All legit pull requests will be accepted!
+### I Would Like All The Help I Could Get!
+#### All legit pull requests will be accepted!
